@@ -1,0 +1,1150 @@
+*{
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    z-index: 1;
+}
+hmtl, body{
+    height: 100vh;
+    min-height: 878px;
+    width: 100vw;
+    min-width: 320px;
+    color: var(--textColorLight);
+    background: var(--baseColor);
+}
+html{
+    font-size: 18px;
+    scroll-behavior: auto;
+}
+:root{
+    --font-group1: 1rem;
+    --font-group2: 1.681rem;
+    --font-group3: 2.825761rem;
+    --font-group4: 4.750104241rem;
+    --fontFam-group2: "Kanit", sans-serif;
+    --fontFam-group1: "Comfortaa", sans-serif;
+    --mainColor: cyan;
+    --secondaryColor: rgb(48, 47, 47);
+    --baseColor: black;
+    --textColorDark: black;
+    --textColorLight: white;
+}
+@keyframes grow{
+    0%{
+        top: 40%;
+        left: 45%;
+        height: 10%;
+        width: 10%;
+        opacity: 1;
+    }
+    70%{
+        height: 600%;
+        width:300%;
+        top: -250%;
+        left: -100%;
+        opacity: 1;
+    }
+    100%{
+        height: 600%;
+        width:300%;
+        top: -250%;
+        left: -100%;
+        opacity: 0;
+    }
+}
+@keyframes navHover{
+    0%{
+        bottom: -10%;
+        left: -10%;
+        height: 0%;
+        width: 120%;
+    }
+    100%{
+        bottom: -10%px;
+        left: -10%;
+        height: 120%;
+        width: 120%;
+    }
+}
+@keyframes pulse{
+    0%{
+        opacity: 0.8;
+        transform: scale(1);
+    }
+    50%{
+        opacity: 1;
+        transform: scale(1.1);
+    }
+    100%{
+        opacity: 0.8;
+        transform: scale(1);
+    }
+}
+@keyframes containerHover{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 59.48839976%;
+    }
+}   
+@keyframes containerUnHover{
+    0%{
+        width: 59.48839976%;
+    }
+    100%{
+        width: 0%;
+    }
+}   
+@keyframes resumeBtnHover{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 150%;
+    }
+}
+@keyframes resumeBtnUnHover{
+    0%{
+        width: 150%;
+    }
+    100%{
+        width: 0%;
+    }
+}
+.navbar{
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: 10%;
+    width: 100%;
+    padding: 0% 5% 0% 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+#navbarElementDiv{
+    position: absolute;
+    top: 35px;
+    right: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 7%;
+    height: 20%;
+}
+.logo{
+    position: absolute !important;
+    left: 10px;
+    cursor: pointer;
+    height: 72px;
+    width: 720px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+.logo img{
+    height: 80px;
+    width: 80px;
+}
+#logoText{
+    color: var(--mainColor);
+    font-size: var(--font-group2);
+    font-family: "Playwrite AR", cursive;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    /* height: 50px;
+    width: 500px; */
+} 
+.navbar-element::before{
+    content: '';
+    background: var(--mainColor);
+    position: absolute;
+    bottom: -2px;
+    left: 0px;
+    height: 0%;
+    width: 0%;
+    z-index: -1;
+    border-radius: 5px;
+    transition: height 0.5s ease;
+}
+.navbar-element{
+    list-style: none;
+    text-decoration: none;
+    color: var(--textColorLight);
+    text-align: center;
+    align-content: center;
+    font-size: var(--font-group1);
+    font-family: var(--fontFam-group1);
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    transition: width 0.1s ease;
+}
+#navMenu{
+   display: none;
+}
+/* .navbar-element:hover{
+    color: var(--textColorDark);
+} */
+/* .navbar-element:hover::before{
+    animation: navHover 0.4s forwards;
+} */
+h1{
+    font-size: var(--font-group3);
+    font-family: var(--fontFam-group2);
+    font-weight: bolder;
+}
+h2{
+    font-size: var(--font-group2);
+    font-family: var(--fontFam-group1);
+    font-weight: bolder;
+}
+p{
+    font-size: var(--font-group1);
+    font-family: var(--fontFam-group1);
+}
+@keyframes appear{
+    from{
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.container{
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    animation: appear 0.1s linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 20%;
+}
+#content-container1{
+    justify-content: center;
+    align-items: center;
+    height: 100;
+}
+.backgroundDiv::before{
+    content:"";
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    background: radial-gradient(var(--baseColor), var(--mainColor));
+    opacity: 1;
+    z-index: -1;
+    /* animation: grow 2s forwards; */
+    animation: grow 2s linear infinite;
+    border-radius: 50%;
+}
+.backgroundDiv{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    display: grid;
+    grid-template-rows: repeat(10, 1fr);
+    grid-template-columns: repeat(20, 1fr);
+    opacity: 1;
+    z-index: 1;
+    gap: 0px;
+}
+.backgroundBlock{
+    text-align: center;
+    align-content: center;
+    background-color: var(--baseColor);
+    /* border:2px solid red;  */
+}
+.backgroundBlock p{
+    display: none;
+}
+#g109, #g110, #g111, #g112, #g113, #g90, #g91, #g88, #g67, #g66, #g25, #g24, #g23, #g86, #g85, #g84, #g63, #g62, #g41, #g40, #g124, #g123, #g82, #g81, #g80, #g142, #g181, #g180, #g120, #g128, #g127, #g185, #g188, #g166, #g165, #g164, #g167, #g72, #g33, #g70, #g49, #g48, #g94, #g55, #g56, #g57, #g38, #g78, #g79, #g135, #g96, #g137, #g118, #g99, #g176, #g177, #g178, #g159, #g170, #g190, #g151, #g152, #g193, #g194{
+    margin-top: 1.5px;
+}
+#g89, #g90, #g91, #g92, #g93, #g70, #g71, #g68, #g47, #g46, #g5, #g4, #g3, #g66, #g65, #g64, #g43, #g42, #g21, #g20, #g104, #g103, #g62, #g61, #g60, #g100, #g122, #g161, #g160, #g108, #g107, #g146, #g145, #g144, #g163, #g165, #g168, #g147, #g52, #g13, #g50, #g29, #g28, #g74, #g35, #g36, #g37, #g18, #g58, #g59, #g115, #g76, #g117, #g98, #g79, #g156, #g157, #g158, #g139, #g150, #g170, #g131, #g132, #g173, #g174{
+    margin-bottom: 1.5px;
+}
+#g90, #g89, #g68, #g46, #g26, #g3, #g67, #g64, #g42, #g85, #g105, #g103, #g83, #g81, #g123, #g142, #g162, #g101, #g109, #g127, #g147, #g164, #g183, #g166, #g185, #g168, #g189, #g72, #g53, #g33, #g14, #g70, #g51, #g31, #g11, #g50, #g28, #g8, #g94, #g75, #g55, #g38, #g19, #g58, #g95, #g115, #g116, #g96, #g97, #g117, #g118, #g99, #g136, #g156, #g159, #g178, #g198, #g110, #g130, #g150, #g171, #g190, #g151, #g153, #g173, #g195{
+    margin-left: 1.5px;
+}
+#g89, #g88, #g67, #g45, #g25, #g2, #g66, #g63, #g41, #g84, #g104, #g102, #g82, #g80, #g100, #g122, #g141, #g161, #g108, #g126, #g146, #g163, #g182, #g165, #g184, #g167, #g188, #g71, #g52, #g32, #g13, #g69, #g50, #g30, #g10, #g49, #g27, #g7, #g93, #g74, #g54, #g37, #g18, #g57, #g94, #g114, #g115, #g95, #g96, #g116, #g117, #g98, #g135, #g155, #g158, #g177, #g197, #g109, #g129, #g149, #g170, #g189, #g150, #g152, #g172, #g194{
+    margin-right: 1.5px
+}
+.contentDiv{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background: transparent;
+}
+#cvPictureDiv{
+    height: 400px;
+    width: 400px;
+
+}
+#cvPictureDiv img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+#textDiv{
+    height: 10%;
+    width: 100%;
+    text-align: center;
+}
+#textDiv h1{
+    font-size: var(--font-group4);
+    font-family: var(--fontFam-group2);
+    font-weight: bolder;
+}
+#textDiv h2{
+    font-size: var(--font-group2);
+    font-family: var(--fontFam-group1);
+}
+#content-container2{
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    padding-bottom: 50px;
+}
+.infoContainer{
+    height: 90%;
+    width: 97%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2% 8% 2% 8%;
+    margin-right: 17px;
+    gap: 30px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 10px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+#aboutInfoContainer{
+    padding: 2% 8% 30px 8%;
+    justify-content: center;
+    gap: 30px;
+    height: auto;
+}
+/* #content-container2:hover #aboutTitle::before{
+    animation: containerHover 0.4s forwards;
+} */
+.containerTitle::before{
+    content: '';
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 0%;
+    height: 10%;
+    background: var(--mainColor);
+    border-radius: 5px;;
+    /* animation: containerUnHover 0.4s forwards; */
+}
+#aboutTitle::before{
+    content: '';
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 59.48839976%;
+    height: 7px;
+    background: var(--mainColor);
+    border-radius: 5px;;
+    /* animation: containerUnHover 0.4s forwards; */
+}
+.containerTitle{
+    position: relative;
+    display: inline-block;
+    font-family: var(--fontFam-group2);
+    font-weight: bolder;
+}
+#content-container3{
+    justify-content: center;
+    align-items: center;
+}
+/* #content-container3:hover #skillsTitle::before{
+    animation: containerHover 0.4s forwards;
+} */
+#skillCardsDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+    height: 70%;
+    width: 100%;
+}
+.skillCard{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    gap: 10%;
+    border-radius: 10px;
+    z-index: 2;
+    background: var(--secondaryColor);
+    color: var(--textColorLight);
+}
+.skillHeading{
+    margin-top: 10%;
+}
+.skill{
+    list-style: none;
+    padding: 12% 0% 5% 0%;
+}
+.containerIcon{
+    position: absolute;
+    top: 60px;
+    right: 40px;
+    height: 130px;
+    width: 130px;
+    z-index: 2;
+    /* animation: pulse 2s linear infinite; */
+}
+.aboutMeImage{
+    position: absolute;
+    top: 100px;
+    right: 50px;
+    height: 800px;
+    width: 800px;
+    z-index: 2;
+}
+#aboutTitle{
+    height: 10%;
+}
+#aboutInfo{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    height: 130px;
+}
+.skill{
+    display:flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+}
+.skillLogo{
+    height: 35px;
+    width: 35px;
+}
+#content-container4{
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    margin-bottom: 3%;
+}
+/* #content-container4:hover #projectsTitle::before{
+    animation: containerHover 0.4s forwards;
+} */
+#projectsCardsDiv{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    justify-items: center;
+    gap: 20px;
+    height: auto;
+    width: 100%;
+}
+.projectCard{
+    display: block;
+    height: 610px;
+    width: 100%;
+    background-color: rgb(37, 36, 36);
+    border-radius: 10px;
+    transition: filter 0.2s ease, transform 0.2s ease;
+    border: 3px solid transparent;
+    cursor: pointer;
+    animation: unHighlight 0.5s forwards;
+}
+@keyframes highlight{
+    0%{
+        filter: brightness(70%);
+    }
+    100%{
+        transform: translateY(-10px);
+        filter: brightness(100%);
+        border: 3px solid var(--mainColor);
+    }
+}
+@keyframes unHighlight{
+    0%{
+        transform: translateY(-10px);
+        filter: brightness(100%);
+        border: 3px solid var(--mainColor);
+    }
+    100%{
+        filter: brightness(70%);
+    }
+}
+/* .projectCard:hover{
+    animation: highlight 0.5s forwards;
+} */
+.projectThumbnailDiv{
+    height: 62%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cardButtonsDiv{
+    height: 13%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+}
+.projectThumbnail{
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+}
+.btn{
+    color: var(--textColorDark);
+    background: var(--mainColor);
+    border: 1px solid var(--baseColor);
+    font-family: var(--fontFam-group2);
+    font-size: var(--font-group1);
+    border-radius: 7px;
+    text-decoration: none;
+    text-align: center !important;
+    align-content: center !important;
+    height: 40px !important;
+    width: 150px !important;
+    gap: 3%;
+    padding: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.eyeIcon{
+    height: 60%;
+    width: 15%;
+}
+.codeIcon{
+    height: 60%;
+    width: 15%;
+}
+.projectCardInfoDiv{
+    height: 25%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+    gap:2px;
+}
+.projectCardInfoDiv p{
+    width: 80%;
+}
+#content-container5{
+    height: 80%;
+    width: 100%;
+}
+@keyframes containerHover2{
+    0%{
+        left:50%;
+        width: 0%;
+    }
+    100%{
+        left:25%;
+        width: 50%;
+    }
+}   
+@keyframes containerUnHover2{
+    0%{
+        width: 50%;
+        left: 25%;
+    }
+    100%{
+        width: 0%;
+        left: 50%;
+    }
+}   
+#contactTitle::before{
+    content: '';
+    position: absolute;
+    left: 20.25580012%;
+    bottom: 0px;
+    width: 59.48839976%;
+    height: 10%;
+    background: var(--mainColor);
+    border-radius: 5px;;
+    /* animation: containerUnHover2 0.4s forwards; */
+}
+/* #content-container5:hover #contactTitle::before{
+    animation: containerHover2 0.4s forwards;
+} */
+#contactSection{
+    height: 100%;
+    width: 100%;
+    border-radius: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5%;
+    padding: 2% 2% 2% 2%;
+}
+#contactTitleDiv{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#contactDetailsDiv{
+    height: 85%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#contactInfoDiv{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 3%;
+    align-items: center;
+    justify-content: center;
+}
+#contactFormDiv{
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#contactForm{
+    height: 100%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2%;
+}
+#identificationDiv{
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2%;
+}
+#identificationDiv input{
+    height: 100%;
+    width: 100%;
+    background: rgb(37, 36, 36);
+    color: var(--textColorLight);
+    padding: 2%;
+}
+#messageDiv{
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#messageDiv textarea{
+    height: 100%;
+    width: 100%;
+    background: rgb(37, 36, 36);
+    color: var(--textColorLight);
+    writing-mode: horizontal-tb;
+    word-wrap: break-word;
+    resize: none;
+    padding: 2%;
+}
+input:focus{
+    outline: 2px solid var(--mainColor);
+}
+textarea:focus{
+    outline: 2px solid var(--mainColor);
+}
+#buttonDiv{
+    height: 8%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+}
+#content-container6{
+    height: 15%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--secondaryColor);
+    color: var(--textColorLight);
+}
+#footerNameDiv{
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#footerLinksDiv{
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+.footerLink{
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#myGitHub{
+    height: 100%;
+    width: 100%;
+}
+#myLinkedIn{
+    height: 100%;
+    width: 100%;
+}
+#myUpWork{
+    height: 100%;
+    width: 100%;
+}
+#resumePDF{
+    height: 530.25px;
+    width: 50%;
+    opacity: 0;
+    display: none;
+    transform: translateY(-20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+#resumePDF.visible{
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+#resumeBTNs{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3%;
+    position: relative;
+    width: 100%;
+    height: 84.83px;
+    overflow: hidden;
+}
+#downloadLink{
+    opacity: 0;
+    transform: translateX(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+#downloadLink.visible{
+    opacity: 1;
+    transform: translateX(0px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+#downloadLink a{
+    text-decoration: none;
+    color: var(--textColorDark);
+    font-family: var(--fontFam-group2);
+}
+html.scroll-smooth {
+    scroll-behavior: smooth;
+}
+.nameField{
+    width: 50%;
+}
+.emailField{
+    width: 50%;
+}
+#myUpWork{
+    transform: translateY(4px);
+}
+#myGitHub{
+    transform: translateY(2px);
+}
+#content-container2 img{
+    display: none;
+}
+#resumePDF{
+    margin: 0px auto;
+    width: 90%;
+}
+@media (max-width: 1600px){
+    html{
+        font-size: 15px;
+    }
+}
+@media (max-width: 1600px){
+    #cvPictureDiv{
+        width: 200px;
+        height: 200px;
+    }
+    #textDiv h1{
+        font-size: var(--font-group2);
+    }
+    #textDiv h2{
+        font-size: var(--font-group1);
+    }
+}
+@media (max-width: 1280px){
+    #skillsInfoContainer{
+        align-items: center;
+        height: auto;
+    }
+    #skillCardsDiv{
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 30px;
+        margin-bottom: 30px;
+        height: auto;
+    }
+    #content-container3{
+        height: auto;
+        margin-bottom: 50px;
+    }
+    .skillCard{
+        width: 768px;
+        height: 400px;
+        justify-content: center;
+    }
+    .skillHeading{
+        margin-top: 2%;
+    }
+    /* .contentDiv{
+        scale: 0.8;
+    } */
+    #projectsCardsDiv{
+        display: flex;
+        flex-direction: column;
+        gap: 2%;
+        width: 768px;
+        align-items: center;
+        justify-content: center;
+    }
+    #porjectInfoContainer{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2% 2%;
+    }
+    #content-container4{
+        height: 265%;
+    }
+}
+@media (max-width: 1086px){
+    html{
+        font-size: 13px;
+    }
+}
+@media (min-width: 1024px){
+    .navbar-element:hover{
+        color: var(--textColorDark);
+    }
+    .navbar-element:hover::before{
+        animation: navHover 0.4s forwards;
+    }
+    #content-container2:hover #aboutTitle::before{
+        animation: containerHover 0.4s forwards;
+    }
+    #content-container3:hover #skillsTitle::before{
+        animation: containerHover 0.4s forwards;
+    }
+    #content-container4:hover #projectsTitle::before{
+        animation: containerHover 0.4s forwards;
+    }
+    .projectCard:hover{
+        animation: highlight 0.5s forwards;
+    }
+    #content-container5:hover #contactTitle::before{
+        animation: containerHover2 0.4s forwards;
+    }
+    #contactTitle::before{
+        animation: containerUnHover2 0.4s forwards;
+    }
+    .containerTitle::before{
+        animation: containerUnHover 0.4s forwards;
+    }
+}
+@media (max-width: 1024px) and (min-width: 850px){
+    .logo img,
+    #cvPictureDiv,
+    .aboutMeImage,
+    .skillLogo,
+    #myGitHub,
+    #myLinkedIn,
+    #myUpWork{
+        scale: 0.8;
+    }
+}
+@media (max-width: 1024px){
+    #navbarElementDiv{
+        position: absolute;
+        top: -612px;
+        right: 0px;
+        display: grid;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 7%;
+        height: 50vh;
+        width: 100%;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        transform: translateY(0px);
+        transition: transform 0.5s ease;
+    }
+    .navbar-element{
+        font-size: var(--font-group2);
+    }
+    #navbarElementDiv.open{
+        transform: translateY(612px);
+        transition: transform 0.5s ease;
+    }
+    #navMenu{
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        display: grid;
+        grid-template-columns: auto;
+        height: 50px;
+        width: 50px;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+    #navMenu div{
+        height: 6px;
+        width: 50px;
+        background-color: var(--textColorLight);
+        border-radius: 5px;
+        opacity: 1;
+        transform: translateY(0px) rotate(0deg);
+        transition: transform 0.5s ease, opacity 0.5s ease;
+    }
+    #navMenu.open div:nth-child(1){
+        transform: translateY(17px) rotate(45deg);
+        transition: transform 0.5s ease;
+    }
+    #navMenu.open div:nth-child(2){
+        opacity: 0;
+    }
+    #navMenu.open div:nth-child(3){
+        transform: translateY(-17px) rotate(-45deg);
+        transition: transform 0.5s ease;
+    }
+    .containerTitle::before{
+        width: 59.48839976%;
+    }
+}
+@media (max-width: 850px) and (min-width: 660px){
+    .logo img,
+    #cvPictureDiv,
+    .aboutMeImage,
+    .skillLogo,
+    #myGitHub,
+    #myLinkedIn,
+    #myUpWork{
+        scale: 0.8;
+    }
+    #navMenu{
+        scale: 1;
+    }
+    .navbar{
+        height: 6%;
+    }
+}
+@media (max-width: 850px){
+    #skillsInfoContainer{
+        padding: 2% 0% 2% 0%;
+    }
+    .skillCard{
+        width: 93.37% !important;
+    }
+    .projectCard{
+        width: 100% !important;
+    }
+    #projectsCardsDiv{
+        width: 99% !important;
+        gap: 20px !important;
+    }
+    #content-container4{
+        align-items: flex-start !important;
+        height: auto !important;
+        margin-bottom: 12%;
+    }
+    #porjectInfoContainer{
+        justify-content: flex-start !important;
+        height: auto !important;
+    }
+}
+@media (max-width: 660px){
+    .logo p{
+        display: none;
+    }
+    #textDiv{
+        display: none;
+    }
+}
+@media (max-width: 660px) and (min-width: 484px){
+    .logo img,
+    #cvPictureDiv,
+    .aboutMeImage,
+    .skillLogo,
+    #myGitHub,
+    #myLinkedIn,
+    #myUpWork{
+        scale: 0.7;
+    }
+    .navbar{
+        height: 6%;
+    }
+    #navMenu{
+        scale: 0.7;
+    }
+    html{
+        font-size: 12px;
+    }
+    .btn{
+        scale: 0.8;
+    }
+}
+@media (max-width: 484px) and (min-width: 420px){
+    .logo img, 
+    #cvPictureDiv,
+    .aboutMeImage,
+    .skillLogo,
+    #myGitHub,
+    #myLinkedIn,
+    #myUpWork{
+        scale: 0.6;
+    }
+    .navbar{
+        height: 6%;
+    }
+    #navMenu{
+        scale: 0.5;
+    }
+    html{
+        font-size: 11px;
+    }
+    .btn{
+        scale: 0.6;
+    }
+}
+@media (max-width: 420px) and (min-width: 386px){
+    .logo img,
+    #cvPictureDiv,
+    .aboutMeImage,
+    .skillLogo,
+    #myGitHub,
+    #myLinkedIn,
+    #myUpWork{
+        scale: 0.6;
+    }
+    #navMenu{
+        scale: 0.5;
+    }
+    .navbar{
+        height: 6%;
+    }
+    html{
+        font-size: 10px;
+    }
+    .btn{
+        scale: 0.6;
+    }
+}
+@media (max-width: 386px) and (min-width: 321px){
+    .logo img,
+    #cvPictureDiv,
+    .aboutMeImage,
+    .skillLogo,
+    #myGitHub,
+    #myLinkedIn,
+    #myUpWork{
+        scale: 0.5;
+    }
+    #navMenu{
+        scale: 0.4;
+    }
+    .navbar{
+        height: 6%;
+    }
+    html{
+        font-size: 8px;
+    }
+    .btn{
+        scale: 0.5;
+    }
+}
+@media (max-width: 321px){
+    .logo img,
+    #cvPictureDiv,
+    .aboutMeImage,
+    .skillLogo,
+    #myGitHub,
+    #myLinkedIn,
+    #myUpWork{
+        scale: 0.4;
+    }
+    #navMenu{
+        scale: 0.3;
+    }
+    .navbar{
+        height: 6%;
+    }
+    html{
+        font-size: 6px;
+    }
+    .btn{
+        scale: 0.5;
+    }
+}
+
+
+
+
+
+
+
+
+
