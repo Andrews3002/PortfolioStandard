@@ -154,8 +154,8 @@ html{
 }
 #logoText{
     color: var(--mainColor);
-    font-size: var(--font-group2);
-    font-family: "Playwrite AR", cursive;
+    font-size: var(--font-group3);
+    font-family: "Anton", cursive;
     font-optical-sizing: auto;
     font-weight: weight;
     font-style: normal;
